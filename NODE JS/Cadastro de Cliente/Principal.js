@@ -1,6 +1,8 @@
-var conexao = require('./model/clienteModel');
+var conexao = require('./config/server');
 
-console.log("Tudo certo");
+
+conexao();
+
 
 
 

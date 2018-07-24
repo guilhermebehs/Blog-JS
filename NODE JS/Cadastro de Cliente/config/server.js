@@ -7,7 +7,7 @@ module.exports = function(){
    
    aplicacao = express();
    aplicacao.set('view engine', 'ejs');
-   aplicacao.set('views, ./view');
+   aplicacao.set('views', './view');
    aplicacao.use(bodyParser.json());
    aplicacao.use(bodyParser.urlencoded({extended:true}));
    aplicacao.use(expressValidator());

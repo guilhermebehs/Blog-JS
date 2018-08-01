@@ -13,3 +13,12 @@ module.exports.retornarTodos = function(req,res){
    });
 
 }; 
+
+
+module.exports.criar = function(req,res){
+   var dados = req.body;
+   base.save(dados,function(){
+      res.render('resposta');
+   };
+   
+};

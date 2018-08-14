@@ -8,9 +8,17 @@ module.exports = function(app){
         controller.retornarTodos(req,res);     
    });
 
-  app.get('/cadastro',function(){
+  app.get('/cadastro',function(req,res){
 
+        res.render("cadastro",{dados:{}});
+        
+  	
+  });
 
+  app.post('/cadastro',function(req,res){
+  	
+        controller.criar(req,res);
+        
   	
   });
 

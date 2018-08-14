@@ -18,7 +18,6 @@ module.exports.get=
 
 module.exports.save= 
     function(cliente,destino){
-
       return conexao.query("insert into cliente set ?",cliente, destino);
 
     };

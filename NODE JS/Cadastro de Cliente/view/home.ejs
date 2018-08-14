@@ -11,6 +11,7 @@ table, th, td {
    <th>ID</th>
    <th>Nome</th>
    <th>Endereço</th>
+   <th>Email</th>
    <th>Data Nascimento</th>
    <% for(i in dados){%>
       <tr>
@@ -22,6 +23,9 @@ table, th, td {
        </td>
        <td>
         <%=dados[i].endereco%> 
+       </td>
+       <td>
+        <%=dados[i].email%> 
        </td>
        <td>
         <%=dados[i].data_nascimento%> 

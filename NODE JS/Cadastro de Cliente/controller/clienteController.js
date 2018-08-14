@@ -17,8 +17,11 @@ module.exports.retornarTodos = function(req,res){
 
 module.exports.criar = function(req,res){
    var dados = req.body;
-   base.save(dados,function(){
+   console.log(dados);
+   base.save(dados,function(erro, resultado){
+   	  if(erro)
+   	  	 console.log(erro);
       res.render('resposta');
-   };
+   });
    
 };

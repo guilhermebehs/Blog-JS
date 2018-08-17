@@ -8,27 +8,27 @@ table, th, td {
 </style>
  <body>
    <table>
-   <th>ID</th>
-   <th>Nome</th>
-   <th>Endereço</th>
-   <th>Email</th>
-   <th>Data Nascimento</th>
-   <% for(i in dados){%>
+   <th>Id Postagem</th>
+   <th>Id Usuario</th>
+   <th>Título</th>
+   <th>Conteúdo</th>
+   <th>Data Criação</th>
+   <% for(i in postagens){%>
       <tr>
        <td>
-        <%=dados[i].id%> 
+        <%=postagens[i].id%> 
        </td>
        <td>
-        <%=dados[i].nome%> 
+        <%=postagens[i].id_usuario%> 
        </td>
        <td>
-        <%=dados[i].endereco%> 
+        <%=postagens[i].titulo%> 
        </td>
        <td>
-        <%=dados[i].email%> 
+        <%=postagens[i].conteudo%> 
        </td>
        <td>
-        <%=dados[i].data_nascimento%> 
+        <%=postagens[i].data_criacao%> 
        </td>
       </tr>
       <%}%>

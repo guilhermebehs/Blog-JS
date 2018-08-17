@@ -1,4 +1,6 @@
 var controller = require('../controller/clienteController');
+var postagemController = require('../controller/postagemController');
+
 
 
 module.exports = function(app){
@@ -14,6 +16,18 @@ module.exports = function(app){
         
   	
   });
+   
+  app.get('/novapostagem',function(req,res){
+
+        res.render("novapostagem",{dados:{}});
+        
+  	
+  }); 
+    app.post('/novapostagem',function(req,res){
+        
+       postagemController.criar(req,res);
+  	
+  }); 
 
   app.post('/cadastro',function(req,res){
   	

@@ -8,7 +8,7 @@ module.exports.retornarTodos = function(req,res){
        if(erro)
           console.log("Ocorreu um erro");
        else
-       	  res.render('home', {dados:resultado, erros:{}});
+       	  res.render('home', {postagens:resultado, erros:{}});
 
    });
 

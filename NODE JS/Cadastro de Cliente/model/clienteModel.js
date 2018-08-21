@@ -10,9 +10,8 @@ module.exports.getAll=
 
 
 module.exports.get= 
-    function(id,destino){
-
-      return conexao.query("select * from cliente where id=?",id, destino);
+    function(dados,destino){
+      return conexao.query("select * from cliente where email=? and senha=?",[dados.email, dados.senha], destino);
 
     };
 

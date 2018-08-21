@@ -5,9 +5,21 @@ var postagemController = require('../controller/postagemController');
 
 module.exports = function(app){
 
-   app.get('/', function(req,res){
+  app.get('/', function(req,res){
+      
+      res.render("index");
+        
+  });
+
+  app.post('/', function(req,res){
+      
+      controller.retornar(req, res);
+        
+  });
+
+   app.get('/home', function(req,res){
    	
-        controller.retornarTodos(req,res);     
+        postagemController.retornarTodos(req,res);     
    });
 
   app.get('/cadastro',function(req,res){

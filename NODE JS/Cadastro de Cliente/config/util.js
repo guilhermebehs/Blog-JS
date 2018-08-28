@@ -1,5 +1,5 @@
 module.exports = function existeSessao(req){
-                  if(req.sessao)
+                  if(req.session.usuario)
                      return true;
                   else
                      return false;	

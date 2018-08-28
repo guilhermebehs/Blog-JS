@@ -2,9 +2,8 @@ var conexao = require('../config/database')();
 
 
 module.exports.getAll= 
-    function(destino){
-
-      return conexao.query("select * from postagem", destino);
+    function(usuario,destino){
+      return conexao.query("select * from postagem where id_usuario=?",usuario[0].id, destino);
 
     };
 

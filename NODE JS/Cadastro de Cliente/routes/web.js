@@ -8,34 +8,36 @@ module.exports = function(app){
 
   app.get('/', function(req,res){
       if(existeSessao(req))
-          res.render("home");
-      else  
-         res.render("index");
+          postagemController.retornarTodos(req,res);
+       else
+         res.render('index');
+          
         
   });
 
   app.post('/', function(req,res){
-       if(existeSessao(req))
-          controller.retornar(req, res);
-        else
-           res.render("index");
+          if(req.body.email && req.body.senha)
+             controller.retornar(req, res);
+          else
+              res.render('index'); 
+             
   });
 
-   app.get('/home', function(req,res){
-         
-   	  if(existeSessao(req))
-         postagemController.retornarTodos(req,res);    
-      else  
-         res.render("index");
+   app.get('/home', function(req,res){ 
+       if(existeSessao(req))   
+          postagemController.retornarTodos(req,res);
+        else
+          res.render('index');      
          
    });
 
   app.get('/cadastro',function(req,res){
 
-        if(existeSessao(req))
+        if(existeSessao(req)) 
            res.render("cadastro",{dados:{}});
         else
-           res.render("index");
+          res.render('index');
+  
   	
   });
    

@@ -17,7 +17,7 @@ module.exports.retornarTodos = function(req,res){
 
 module.exports.criar = function(req,res){
    var dados = req.body;
-   console.log(dados);
+   dados.id_usuario = req.session.usuario.id;
    base.save(dados,function(erro, resultado){
    	  if(erro)
    	  	 console.log(erro);

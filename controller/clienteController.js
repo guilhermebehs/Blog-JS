@@ -1,5 +1,5 @@
 var base = require('../model/clienteModel');
-var pController=require('../controller/postagemController');
+var pController=require('./postagemController');
 var http = require('http');
 
 
@@ -13,8 +13,7 @@ module.exports.retornar = function(req,res){
           if(Object.keys(resultado).length == 0)
              console.log("Dados Inválidos");
            else{
-             req.session.usuario = resultado;
-             console.log(req.session.usuario);
+             req.session.usuario = resultado[0];
              pController.retornarTodos(req,res); 
            }
                

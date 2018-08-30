@@ -1,4 +1,4 @@
-var controller = require('../controller/clienteController');
+var clienteController = require('../controller/clienteController');
 var postagemController = require('../controller/postagemController');
 var existeSessao = require('../config/util');
 
@@ -17,7 +17,7 @@ module.exports = function(app){
 
   app.post('/', function(req,res){
           if(req.body.email && req.body.senha)
-             controller.retornar(req, res);
+              clienteController.retornar(req, res);
           else
               res.render('index'); 
              
@@ -31,34 +31,33 @@ module.exports = function(app){
          
    });
 
-  app.get('/cadastro',function(req,res){
+  app.get('/NovoUsuario',function(req,res){
 
         if(existeSessao(req))
-           res.render("cadastro",{dados:{}});
+           res.render("NovoUsuario",{dados:{}});
         else
           res.render('index');
 
   });
+
+
+
+app.post('/NovoUsuario',function(req,res){
+
+    clienteController.criar(req,res);
+
+});
    
-  app.get('/novapostagem',function(req,res){
+  app.get('/NovaPostagem',function(req,res){
       if(existeSessao(req))
-         res.render("novapostagem",{dados:{}});
+         res.render("NovaPostagem",{dados:{}});
       else
           res.render('index');
-  }); 
-    app.post('/novapostagem',function(req,res){
-        if(existeSessao(req))
-           postagemController.criar(req,res);
-
-  	
-  }); 
-
-  app.post('/cadastro',function(req,res){
-  	
-        controller.criar(req,res);
-        
-  	
   });
 
+    app.post('/NovaPostagem',function(req,res){
+        if(existeSessao(req))
+           postagemController.criar(req,res);
+    });
 
 };

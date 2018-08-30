@@ -33,23 +33,23 @@ module.exports = function(app){
 
   app.get('/cadastro',function(req,res){
 
-        if(existeSessao(req)) 
+        if(existeSessao(req))
            res.render("cadastro",{dados:{}});
         else
           res.render('index');
-  
-  	
+
   });
    
   app.get('/novapostagem',function(req,res){
-       
-        res.render("novapostagem",{dados:{}});
-        
-  	
+      if(existeSessao(req))
+         res.render("novapostagem",{dados:{}});
+      else
+          res.render('index');
   }); 
     app.post('/novapostagem',function(req,res){
-        
-       postagemController.criar(req,res);
+        if(existeSessao(req))
+           postagemController.criar(req,res);
+
   	
   }); 
 
